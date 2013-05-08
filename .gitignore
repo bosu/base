@@ -19,8 +19,6 @@
 /configure
 /dist-install/
 /ghc.mk
-/include/EventConfig.h
-/include/HsBaseConfig.h
 /include/HsBaseConfig.h.in
 
 tests/.hpc/
