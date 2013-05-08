@@ -11,7 +11,7 @@ description:
     and a large collection of useful libraries ranging from data
     structures to parsing combinators and debugging utilities.
 cabal-version:  >=1.6
-build-type: Configure
+build-type: Simple
 extra-tmp-files:
                 config.log config.status autom4te.cache
                 include/HsBaseConfig.h include/EventConfig.h
@@ -230,7 +230,6 @@ Library {
         cbits/md5.c
         cbits/sysconf.c
     include-dirs: include
-    includes:    HsBase.h
     install-includes:    HsBase.h HsBaseConfig.h EventConfig.h WCsubst.h consUtils.h Typeable.h OldTypeable.h
     if os(windows) {
         extra-libraries: wsock32, user32, shell32
@@ -258,4 +257,5 @@ Library {
     ghc-options: -package-name base
     nhc98-options: -H4M -K3M
     extensions: CPP
+    hs-source-dirs: src
 }
