@@ -144,9 +144,9 @@ initLocaleEncoding, initFileSystemEncoding, initForeignEncoding :: TextEncoding
 -- FIXME: this is not a complete solution because if the locale encoding is one
 -- which we don't have a Haskell-side decoder for, iconv might still ignore the
 -- lone surrogate in the input.
-initLocaleEncoding     = unsafePerformIO $ mkTextEncoding' ErrorOnCodingFailure Iconv.localeEncodingName
-initFileSystemEncoding = unsafePerformIO $ mkTextEncoding' RoundtripFailure     Iconv.localeEncodingName
-initForeignEncoding    = unsafePerformIO $ mkTextEncoding' IgnoreCodingFailure  Iconv.localeEncodingName
+initLocaleEncoding     = utf8
+initFileSystemEncoding = utf8
+initForeignEncoding    = utf8
 #else
 initLocaleEncoding     = CodePage.localeEncoding
 initFileSystemEncoding = CodePage.mkLocaleEncoding RoundtripFailure
