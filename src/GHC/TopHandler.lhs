@@ -60,7 +60,7 @@ import GHC.ConsoleHandler
 -- called in the program).  It catches otherwise uncaught exceptions,
 -- and also flushes stdout\/stderr before exiting.
 runMainIO :: IO a -> IO a
-runMainIO main = main
+runMainIO main = main `catch` topHandler
 
 install_interrupt_handler :: IO () -> IO ()
 #ifdef mingw32_HOST_OS
