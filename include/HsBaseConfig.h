@@ -295,6 +295,9 @@
 /* The value of EWOULDBLOCK. */
 #define CONST_EWOULDBLOCK 11
 
+/* The value of ENOTSUP. */
+#define CONST_ENOTSUP 252
+
 /* The value of EXDEV. */
 #define CONST_EXDEV 18
 
